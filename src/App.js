@@ -3,6 +3,7 @@ import './App.css';
 import Button from "./button.js";
 
 import TextBoxes from './TextBox';
+import Converter from './Converter';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       {/* <HugeImage /> */}
       <Button />
       <TextBoxes />
+      <Converter />
     </div >
   );
 }

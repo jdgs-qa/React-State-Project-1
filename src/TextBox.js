@@ -9,8 +9,8 @@ export default class TextBoxes extends Component {
             style: {
                 color: "",
                 fontFamily: "",
-                backgroundColor: "white",
-                fontSize: "20px"
+                backgroundColor: "",
+                fontSize: ""
             }
         }
 
@@ -30,24 +30,24 @@ export default class TextBoxes extends Component {
                 </div >
                 <div className="form-group input-group mt-4">
                     <div className="input-group-prepend">
-                        <span className="input-group-text"> <i className="fa fa-palette"></i> </span>
+                        <span className="input-group-text"> <i className="fa fa-tint"></i> </span>
                     </div>
-                    <input id="colorbox" className="form-control" value={this.state.color} placeholder="choose a web color" type="text" onChange={colorbox => this.changeColor(colorbox)} />
+                    <input id="colorbox" className="form-control" value={this.state.style.color} placeholder="choose a web color" type="text" onChange={colorbox => this.changeColor(colorbox)} />
                     <div className="input-group-prepend">
-                        <span className="input-group-text"> <i className="fa fa-palette"></i> </span>
+                        <span className="input-group-text"> <i className="fa fa-fill-drip"></i> </span>
                     </div>
-                    <input id="colorbox" className="form-control" value={this.state.backgroundColor} placeholder="choose a background color" type="text" onChange={colorbox => this.changeBGColor(colorbox)} />
+                    <input id="colorbox" className="form-control" value={this.state.style.backgroundColor} placeholder="choose a background color" type="text" onChange={colorbox => this.changeBGColor(colorbox)} />
                     <div className="input-group-prepend">
-                        <span className="input-group-text"> <i className="fa fa-palette"></i> </span>
+                        <span className="input-group-text"> <i className="fa fa-font"></i> </span>
                     </div>
-                    <input id="fontbox" className="form-control" value={this.state.fontFamily} placeholder="choose a font" type="text" onChange={fontbox => this.changeFont(fontbox)} />
+                    <input id="fontbox" className="form-control" value={this.state.style.fontFamily} placeholder="choose a font" type="text" onChange={fontbox => this.changeFont(fontbox)} />
                     <div className="input-group-prepend">
-                        <span className="input-group-text"> <i className="fa fa-palette"></i> </span>
+                        <span className="input-group-text"> <i className="fa fa-text-height"></i> </span>
                     </div>
-                    <input id="fontSizebox" className="form-control" value={this.state.fontSize} placeholder="choose a fontSize" type="text" onChange={fontSizebox => this.changeFont(fontSizebox)} />
+                    <input id="fontSizebox" className="form-control" value={this.state.style.fontSize} placeholder="choose a font size" type="text" onChange={fontSizebox => this.changeFontSize(fontSizebox)} />
                 </div>
-                <div className="">
-                    <p className="text-center" style={this.state.style}>{this.state.text}</p>
+                <div className="m-4" style={this.state.style}>
+                    <p>{this.state.text}</p>
                 </div>
             </div >
         )
@@ -91,13 +91,13 @@ export default class TextBoxes extends Component {
         });
     }
 
-    changefontSize(fontSizebox) {
+    changeFontSize(fontSizebox) {
         this.setState({
             style: {
                 color: this.state.style.color,
                 fontFamily: this.state.style.fontFamily,
                 backgroundColor: this.state.style.backgroundColor,
-                fontSize: fontSizebox.target.value + "px"
+                fontSize: fontSizebox.target.value
             }
         });
     }
